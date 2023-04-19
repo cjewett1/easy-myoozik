@@ -1,0 +1,59 @@
+@use 'colors' as *;
+
+// media query breakpoints
+@mixin break($point) {
+    @if $point == small {
+        @media (min-width: 600px) { @content; }
+    }
+    @else if $point == med {
+        @media (min-width: 800px) { @content; }
+    }
+    @else if $point == wide {
+        @media (min-width: 1280px) { @content; }
+    }
+    @else if $point == exwide {
+        @media (min-width: 1750px) { @content; }
+    }
+}
+
+@mixin basic-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin  flex-row-nowrap {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+@mixin flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+@mixin box-shadow-border {
+    border: 1px solid $light-navy;
+    box-shadow: 0 5px 15px -10px $light-navy;
+    border-radius: 10px;
+}
+
+@mixin box-shadow {
+    box-shadow: rgba(50, 50, 105, 0.45) 0px 2px 5px 0px, rgba(0, 0, 0, 0.15) 0px 1px 1px 0px;
+}
+
+@mixin max-width-center{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+//@include mixins.mixin;
+

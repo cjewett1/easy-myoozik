@@ -1,0 +1,22 @@
+@use 'mixins' as *; //'as *' adds the module to the root namespace; no prefix is needed (removes any namespace).
+@use 'colors' as *;
+@use 'backgrounds' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,700;0,900;1,400&display=swap');
+
+//Base Structure
+html{
+    line-height: 1.5;
+}
+
+body{
+    background-image: linear-gradient($electric-blue, $red);
+}
+
+main{
+    min-height: 100vh;
+}
+
+
+
+

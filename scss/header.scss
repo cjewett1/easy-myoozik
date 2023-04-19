@@ -1,0 +1,28 @@
+@use 'assets/base';
+@use 'assets/colors' as *;
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+    padding: 1rem 2rem;
+    .logo{
+        display:flex;
+        gap: 2rem;
+        align-items: center;
+    }
+}
+
+.header-nav
+{max-width: 1280px;
+}
+
+

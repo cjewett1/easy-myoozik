@@ -1,0 +1,15 @@
+@use 'assets/base';
+@use 'assets/colors' as *;
+
+footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+
+    border-top: 1px solid black;
+    background: transparent;
+    color: black;
+    padding: 2rem;
+}
