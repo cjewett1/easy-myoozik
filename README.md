@@ -1,7 +1,7 @@
 ## Overview
 Welcome to the Eazy Myoozik repo. This is my passion project. Being an avid music lover, especially live music, I decided to create an app that allows a user to search for their favorite artist, view upcoming and previous concerts as well as leave a review for a concert they had previously attended. 
 
-This site features muliple API calls and data fetching, as well as sending data to firebase. It also features Nextjs routing, the use of various React hooks such as useEffect and useState, server side rendering and the use of many 3rd party libraries such as FontAwesome, SASS, SVGR and Axios to handle the API calls. 
+This site features muliple API calls and data fetching, as well as sending data to firebase. I took it upon myself to reach out to BandsInTown to get access to their API, they gave me limited access, so I am a bit limited in the information that I can access, but it ended up working very well for me. The site also features Nextjs routing, the use of various React hooks such as useEffect and useState, server side rendering and the use of many 3rd party libraries such as FontAwesome, SASS, SVGR and Axios to handle the API calls. 
 
 ## Why did I make this project? Why did I use React and Next.js?
 I made this project using React and Nextjs because I wanted to really learn the fundamentals of these two powerful libraries. I did get a basic understanding in my React course but I really wanted to learn more, as I find it so fun to work with.
