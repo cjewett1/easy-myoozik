@@ -1,38 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Overview
+Welcome to the Eazy Myoozik repo. This is my passion project. Being an avid music lover, especially live music, I decided to create an app that allows a user to search for their favorite artist, view upcoming and previous concerts as well as leave a review for a concert they had previously attended. 
 
-## Getting Started
+This site features muliple API calls and data fetching, as well as sending data to firebase. It also features Nextjs routing, the use of various React hooks such as useEffect and useState, server side rendering and the use of many 3rd party libraries such as FontAwesome, SASS, SVGR and Axios to handle the API calls. 
 
-First, run the development server:
+## Why did I make this project? Why did I use React and Next.js?
+I made this project using React and Nextjs because I wanted to really learn the fundamentals of these two powerful libraries. I did get a basic understanding in my React course but I really wanted to learn more, as I find it so fun to work with.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+This project has been immensely rewarding and satisfying to work on. It has pushed me to be resourceful and has tested my problem solving skills, many, mnay times. I feel that this project has really helped me understand the fundamentals of React and Nexjs, and well as getting data from an API and learning how to extract and manipulate that data and make it usable on your website. I am using Axios because I wanted to give it a try. I normally use Fetch but I had seen people mention Axios, so I decided to try it out. These reasons are why I decided to create this app in the first place. 
+
+## Project Status
+Right now, the site is stll in development. I am currently working on some of the styling and will move on to the authentication and ability to leave a review. I work on this site whenever I get a chance. A lot of my time is taken up by schoolwork and general life stuff, but I love working on this project and look forward to finishing it.
+
+## Code Examples
+
+Here is an example of sending data via a query string to ensure that the aritst's data is properly rendered when they are pushed to the artist page.
+
+This did take me a little while to figure out, but it was very satisfying when I got it all to work!
+
+I really like this method of passing data, and it was interesting to learn about. You learn about query strings in PHP quite early on but up until this project I didn't know you could do this with Nextjs as well! Things like this are why I really enjoy using Nextjs. 
+
+```
+    <Link
+        href={{
+            pathname: "/artist",
+            query: {
+                name: artistInfo.name,
+                url: artistInfo.image_url,
+            },
+        }}
+    >
+        View Artist's Page
+    </Link>
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## When I get more time, I am going to work on
+ - [x]  Add the ability to login using google authentication and firebase
+ - [x]  Add the ability for logged in users to leave reviews
+ - [x]  I need to add validation to the search form and eventually to the review form
+ - [x]  I will add the most recent reviews to the home page for all to see
+ - [ ]   Styling and layout are still fairly fluid, so I will continue to work on this over time
+ - [ ]   Ability for user to edit their reviews in the admin dashboard
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Challenges I faced while making this
+While this has been a fun and rewarding project to develop, it has come with its fair share of challenges. 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Being fairly new to React and Nextjs, I had to spend some time looking things up and playing around to get things to work the way I wanted them to. For instance, having a user search for an artist, then that artist comes up via an API call, then the user can click on the artist to view their details and upcoming concerts on another page. I had to learn how to pass data through query strings/params to ensure that the artist's data was being rendered properly when the page loaded.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+I am still working on how to keep the artist's data on the page if a user accidentally hits refresh or leaves the page. Right now the written data is persistant, but I am still working on the image. I am using localstorage to accomplish that.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Useful Links
+I will post the link to this website when I deploy it. I have not done so yet as its not yet complete, but you can download and run it locally if you wanted to test it.
 
-## Learn More
+## Contact
+## Connect with me
+[![Phone](https://img.shields.io/badge/Phone-%23333.svg?&style=for-the-badge&logo=telephone&logoColor=white)](tel:+7802424053)
+[![Email](https://img.shields.io/badge/Email-%23D14836.svg?&style=for-the-badge&logo=gmail&logoColor=white)](mailto:clintondgorda@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/clintonjewett/)
+[![Discord](https://img.shields.io/badge/Discord-clint(booma)%234826-%237289DA?logo=discord&logoColor=white&style=for-the-badge)](https://discord.com/users/clint(booma)#4826)
 
-To learn more about Next.js, take a look at the following resources:
+[![Portfolio](https://img.shields.io/badge/Portfolio-Check%20out%20my%20website-blue?style=for-the-badge&logo=portfolio&logoColor=white)](https://www.clinton-gorda.com)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[![Resume](https://img.shields.io/badge/Resume-View%20my%20resume-orange?style=for-the-badge&logo=Resume-Icons&logoColor=white)](https://drive.google.com/file/d/1fO-yFbp0v9N1611nk4rxw1zoYp_w1jmg/view?usp=sharing)
