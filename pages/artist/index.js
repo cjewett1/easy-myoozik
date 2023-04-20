@@ -24,8 +24,8 @@ export default function ArtistInfo(props) {
     const [artistReviews, setArtistReviews] = useState([]);
     const [upcomingConcerts, setUpcomingConcerts] = useState("");
 
-    const CONCERT_API_KEY = process.env.C_API_KEY;
-    const ARTIST_API_KEY = process.env.A_API_KEY;
+    const concertApiKey = process.env.NEXT_PUBLIC_CONCERT_API_KEY;
+    const artistApiKey = process.env.NEXT_PUBLIC_ARTIST_API_KEY;
 
     useEffect(() => {
         setArtistName(name);
@@ -42,7 +42,7 @@ export default function ArtistInfo(props) {
     const getArtistBio = async () => {
         try {
             const res = await axios.get(
-                `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${name}&api_key=${CONCERT_API_KEY}&format=json`
+                `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${name}&api_key=${concertApiKey}&format=json`
             );
             setArtistBio(res.data.artist.bio);
         } catch (err) {
@@ -53,7 +53,7 @@ export default function ArtistInfo(props) {
     const concertHandler = async () => {
         try {
             const res = await axios.get(
-                `https://rest.bandsintown.com/artists/${artistName}/events?app_id=${ARTIST_API_KEY}`
+                `https://rest.bandsintown.com/artists/${artistName}/events?app_id=${artistApiKey}`
             );
             setConcertInfo(res.data);
         } catch (err) {

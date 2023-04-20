@@ -16,7 +16,7 @@ function App() {
 
     const { query } = useRouter();
 
-    const ARTIST_API_KEY = process.env.A_API_KEY;
+    const artistApiKey = process.env.NEXT_PUBLIC_ARTIST_API_KEY;
 
     //State for grabbing the artist name
     const [artistInfo, setArtistInfo] = useState("");
@@ -45,7 +45,7 @@ function App() {
     const getArtist = async () => {
         try {
             const res = await axios.get(
-                `https://rest.bandsintown.com/artists/${artist}/?app_id=${ARTIST_API_KEY}`
+                `https://rest.bandsintown.com/artists/${artist}/?app_id=${artistApiKey}`
             );
             setArtistInfo(res.data);
             localStorage.setItem("name", artist);
