@@ -9,7 +9,7 @@ I made this project using React and Nextjs because I wanted to really learn the 
 This project has been immensely rewarding and satisfying to work on. It has pushed me to be resourceful and has tested my problem solving skills, many, mnay times. I feel that this project has really helped me understand the fundamentals of React and Nexjs, and well as getting data from an API and learning how to extract and manipulate that data and make it usable on your website. I am using Axios because I wanted to give it a try. I normally use Fetch but I had seen people mention Axios, so I decided to try it out. These reasons are why I decided to create this app in the first place. 
 
 ## Project Status
-Right now, the site is stll in development. I am currently working on some of the styling and will move on to the authentication and ability to leave a review. I work on this site whenever I get a chance. A lot of my time is taken up by schoolwork and general life stuff, but I love working on this project and look forward to finishing it.
+Right now, the site is almost finished. I have a bit of styling left to do as well as the ability for a logged in user to edit their reviews. Ill get there! A lot of my time is taken up by schoolwork and general life stuff, but I love working on this project and look forward to finishing it.
 
 ## Code Examples
 
@@ -46,8 +46,6 @@ I really like this method of passing data, and it was interesting to learn about
 While this has been a fun and rewarding project to develop, it has come with its fair share of challenges. 
 
 Being fairly new to React and Nextjs, I had to spend some time looking things up and playing around to get things to work the way I wanted them to. For instance, having a user search for an artist, then that artist comes up via an API call, then the user can click on the artist to view their details and upcoming concerts on another page. I had to learn how to pass data through query strings/params to ensure that the artist's data was being rendered properly when the page loaded.
-
-I am still working on how to keep the artist's data on the page if a user accidentally hits refresh or leaves the page. Right now the written data is persistant, but I am still working on the image. I am using localstorage to accomplish that.
 
 ## Useful Links
 I will post the link to this website when I deploy it. I have not done so yet as its not yet complete, but you can download and run it locally if you wanted to test it.
