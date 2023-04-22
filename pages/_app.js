@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }) {
     return (
         <>
             <ToastContainer limit={1} />
-            <Component {...pageProps} />;
+            <Component {...pageProps} />
         </>
     );
 }
