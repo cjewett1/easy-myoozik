@@ -5,11 +5,13 @@ import { auth, db } from "@/utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useRouter } from "next/router";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 export default function Header() {
     const [user, loading] = useAuthState(auth);
+    const [navToggled, setNavToggled] = useState(false);
+
     const route = useRouter();
     //Sign in with google
     const googleProvider = new GoogleAuthProvider();
@@ -26,6 +28,10 @@ export default function Header() {
         } catch (error) {
             console.log(error);
         }
+    };
+
+    const toggleNavMenu = () => {
+        setNavToggled(true);
     };
 
     return (
@@ -65,6 +71,13 @@ export default function Header() {
                             Sign out
                         </li>
                     )}
+                    {/* <li className='toggle-nav'>
+                        <svg viewBox='0 0 100 80' width='40' height='40'>
+                            <rect width='100' height='20'></rect>
+                            <rect y='30' width='100' height='20'></rect>
+                            <rect y='60' width='100' height='20'></rect>
+                        </svg>
+                    </li> */}
                 </ul>
             </nav>
         </header>
