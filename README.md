@@ -1,4 +1,8 @@
+
+# API access has been removed - I was able to use BandsInTown's API to access artists information regarding concerts, but that was for 3 months only, which sadly expired in June. I am working on a new similar project with API access that isn't so limited and time sensitive. While I knew I was only going to have site functionality for 3 months, I am happy I created the site and it was an incredible learning tool for me. I will leave the repo up so that my code is still visible. I plan on making a bigger and better project in the near future! Thanks for reading.
+
 ## Overview
+
 Welcome to the Eazy Myoozik repo. This is my passion project. Being an avid music lover, especially live music, I decided to create an app that allows a user to search for their favorite artist, view upcoming and previous concerts as well as leave a review for a concert they had previously attended. 
 
 This site features muliple API calls and data fetching, as well as sending data to firebase. I took it upon myself to reach out to BandsInTown to get access to their API, they gave me limited access, so I am a bit limited in the information that I can access, but it ended up working very well for me. The site also features Nextjs routing, the use of various React hooks such as useEffect and useState, server side rendering and the use of many 3rd party libraries such as FontAwesome, SASS, SVGR and Axios to handle the API calls. 
