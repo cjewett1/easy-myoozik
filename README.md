@@ -1,5 +1,5 @@
 
-# API access has been removed - I was able to use BandsInTown's API to access artists information regarding concerts, but that was for 3 months only, which sadly expired in June. I am working on a new similar project with API access that isn't so limited and time sensitive. While I knew I was only going to have site functionality for 3 months, I am happy I created the site and it was an incredible learning tool for me. I will leave the repo up so that my code is still visible. I plan on making a bigger and better project in the near future! Thanks for reading.
+## API access has been removed - I was able to use BandsInTown's API to access artists information regarding concerts, but that was for 3 months only, which sadly expired in June. I am working on a new similar project with API access that isn't so limited and time sensitive. While I knew I was only going to have site functionality for 3 months, I am happy I created the site and it was an incredible learning tool for me. I will leave the repo up so that my code is still visible. I plan on making a bigger and better project in the near future! Thanks for reading.
 
 ## Overview
 
