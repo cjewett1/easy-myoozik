@@ -3,11 +3,11 @@
 
 I was able to use BandsInTown's API to access artists information regarding concerts, but that was for 3 months only, which sadly expired in June. I have created my own endpoint using next.js, but it is very limited as of now. The artists that I have information for are:
 
-Taylor Swift
-Metallica
-The Beatles
-Charli XCX
-The Weeknd
+Taylor Swift,
+Metallica,
+The Beatles,
+Charli XCX,
+The Weeknd,
 
 As long as those artists are searched, the app with still function as intended. Rather than expand this, I am going to start creating my next app. I just wanted the site to remain functional even with the loss of API access. Thanks for reading! 
 
