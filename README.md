@@ -23,7 +23,7 @@ I made this project using React and Nextjs because I wanted to really learn the 
 This project has been immensely rewarding and satisfying to work on. It has pushed me to be resourceful and has tested my problem solving skills, many, many times. I feel that this project has really helped me understand the fundamentals of React and Nexjs, and well as getting data from an API and learning how to extract and manipulate that data and make it usable on your website. I am using Axios because I wanted to give it a try. I normally use Fetch but I had seen people mention Axios, so I decided to try it out. These reasons are why I decided to create this app in the first place. 
 
 ## Project Status
-Right now, the site is almost finished. I have a bit of styling left to do as well as the ability for a logged in user to edit their reviews. Ill get there! A lot of my time is taken up by schoolwork and general life stuff, but I love working on this project and look forward to finishing it.
+I had to fix some errors regarding API access and fix some overall bugs. I may expand some capabilities over time, but I have a few other projects that I want to work on for the time being. Look for updates to the site!
 
 ## Code Examples
 
