@@ -11,14 +11,11 @@ import Link from "next/link";
 import RecentReviews from "@/components/RecentReviews";
 
 function App() {
-    const [artist, setArtist] = useState(null);
+    const [artist, setArtist] = useState("");
     const [search, setSearch] = useState("");
 
     const { query } = useRouter();
 
-    const artistApiKey = process.env.NEXT_PUBLIC_ARTIST_API_KEY;
-
-    //State for grabbing the artist name
     const [artistInfo, setArtistInfo] = useState("");
 
     function searchHandler(event) {
@@ -38,21 +35,24 @@ function App() {
         }
     }
 
+    console.log(search);
     useEffect(() => {
-        getArtist();
+        const getArtist = async () => {
+            try {
+                const res = await axios.get("/api/myapi", {
+                    params: { artist: artist },
+                });
+                setArtistInfo(res.data);
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+        if (artist) {
+            getArtist();
+        }
     }, [artist]);
 
-    const getArtist = async () => {
-        try {
-            const res = await axios.get(
-                `https://rest.bandsintown.com/artists/${artist}/?app_id=${artistApiKey}`
-            );
-            setArtistInfo(res.data);
-            localStorage.setItem("name", artist);
-        } catch (err) {
-            alert(err.message);
-        }
-    };
     return (
         <main className='main-container'>
             <Header />
@@ -76,51 +76,56 @@ function App() {
                     </form>
                 </div>
             </div>
-            {artistInfo ? (
+
+            {/* Rendering section */}
+            {search && !artistInfo ? (
+                <h1>No Artist Found. Try another search.</h1>
+            ) : artistInfo && artistInfo.length > 0 ? (
                 <section className='artist-info'>
-                    <section
-                        className={artistInfo.name ? "artist-info" : "hidden"}
-                    >
-                        <h1>{artistInfo.name}</h1>
-                        {/* <h2>{artistInfo.links.type[4]}</h2> */}
-                        <Link
-                            href={{
-                                pathname: "/artist",
-                                query: {
-                                    name: artistInfo.name,
-                                    url: artistInfo.image_url,
-                                    id: artistInfo.id,
-                                    upcomingevents:
-                                        artistInfo.upcoming_event_count,
-                                },
-                            }}
-                        >
-                            <img src={artistInfo.image_url} alt='' />
-                        </Link>
-                        <p>
-                            {artistInfo.url && (
-                                <a href={artistInfo.url} target={"_blank"}>
-                                    <strong>Link to Bandsintown page</strong>
-                                </a>
-                            )}
+                    {artistInfo.map((artist) => (
+                        <div key={artist.id}>
+                            <h1>{artist.name}</h1>
+                            <img src={artist.url} alt={artist.name} />
                             <Link
                                 href={{
                                     pathname: "/artist",
                                     query: {
-                                        name: artistInfo.name,
-                                        url: artistInfo.image_url,
-                                        id: artistInfo.id,
+                                        name: artist.name,
+                                        url: artist.url,
+                                        id: artist.id,
+                                        upcomingevents: artist.upcoming,
                                     },
                                 }}
                             >
-                                View Page
+                                <img src={artistInfo.url} alt='' />
                             </Link>
-                        </p>
-                    </section>
+                            <p>
+                                {artist.url && (
+                                    <a href={artist.link} target='_blank'>
+                                        <strong>
+                                            Link to Bandsintown page
+                                        </strong>
+                                    </a>
+                                )}
+                                <Link
+                                    href={{
+                                        pathname: "/artist",
+                                        query: {
+                                            name: artist.name,
+                                            url: artist.url,
+                                            id: artist.id,
+                                            upcomingevents: artist.upcoming,
+                                        },
+                                    }}
+                                >
+                                    View Page
+                                </Link>
+                            </p>
+                        </div>
+                    ))}
                 </section>
-            ) : (
-                <h1>No Artist Found. Try another search.</h1>
-            )}
+            ) : null}
+
             <RecentReviews />
         </main>
     );
