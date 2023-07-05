@@ -50,18 +50,31 @@ export default function ArtistInfo(props) {
         }
     };
 
+    // const concertHandler = async () => {
+    //     try {
+    //         const res = await axios.get(
+    //             `https://rest.bandsintown.com/artists/${artistName}/events?app_id=${artistApiKey}`
+    //         );
+    //         setConcertInfo(res.data);
+    //     } catch (err) {
+    //         toast.warn("No upcoming shows! 🤷‍♂️ Check back later!", {
+    //             position: toast.POSITION.TOP_CENTER,
+    //             autoClose: 1500,
+    //         });
+    //         console.log("err.message");
+    //         return;
+    //     }
+    // };
+
     const concertHandler = async () => {
         try {
-            const res = await axios.get(
-                `https://rest.bandsintown.com/artists/${artistName}/events?app_id=${artistApiKey}`
-            );
+            const res = await axios.get("/api/myapi", {
+                params: { artist: name },
+            });
+            console.log(res.data); // Log the API response
             setConcertInfo(res.data);
         } catch (err) {
-            toast.warn("No upcoming shows! 🤷‍♂️ Check back later!", {
-                position: toast.POSITION.TOP_CENTER,
-                autoClose: 1500,
-            });
-            console.log("err.message");
+            console.error(err);
             return;
         }
     };
@@ -184,15 +197,15 @@ export default function ArtistInfo(props) {
                 {concertInfo &&
                     concertInfo.map((shows) => {
                         return (
-                            <div className='concert-card'>
+                            <div className='concert-card' key={shows.id}>
                                 <div className='venue-info'>
                                     <p style={{ textDecoration: "underline" }}>
-                                        {shows.venue.name}
+                                        {shows.concert.name}
                                     </p>
                                     <div className='country'>
-                                        <p>{shows.venue.location} </p>
+                                        <p>{shows.concert.location}</p>
                                         <p> | </p>
-                                        <p> {shows.venue.country}</p>
+                                        <p>{shows.concert.country}</p>
                                     </div>
                                 </div>
                                 <div className='bottom-half'>
@@ -200,19 +213,19 @@ export default function ArtistInfo(props) {
                                         <p>
                                             Date:{" "}
                                             {new Date(
-                                                shows.datetime
-                                            ).toLocaleDateString()}{" "}
+                                                shows.concert.datetime
+                                            ).toLocaleDateString()}
                                         </p>
                                         <p>|</p>
                                         <p>
                                             Time:{" "}
                                             {new Date(
-                                                shows.datetime
+                                                shows.concert.datetime
                                             ).toLocaleTimeString()}
                                         </p>
                                     </div>
                                     <p>
-                                        <a href={shows.url}>
+                                        <a href={shows.link}>
                                             <FontAwesomeIcon
                                                 icon={faTicket}
                                                 color='white'
