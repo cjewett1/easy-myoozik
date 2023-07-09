@@ -16,7 +16,8 @@ function App() {
 
     const { query } = useRouter();
 
-    const [artistInfo, setArtistInfo] = useState("");
+    const [artistInfo, setArtistInfo] = useState([]);
+    const [searched, setSearched] = useState(false);
 
     function searchHandler(event) {
         event.preventDefault();
@@ -24,14 +25,14 @@ function App() {
             char.toUpperCase()
         );
         if (capitalizedSearch.trim() === "") {
-            //ctrl + cmd + space to bring up emoji keyboard!!!
-            toast.error("Search for an artist! 😳  Dont leave it blank! 😅", {
+            toast.error("Search for an artist! 😳  Don't leave it blank! 😅", {
                 position: toast.POSITION.TOP_CENTER,
                 autoClose: 1500,
             });
         } else {
             setArtist(capitalizedSearch);
             setSearch("");
+            setSearched(true);
         }
     }
 
@@ -78,9 +79,11 @@ function App() {
             </div>
 
             {/* Rendering section */}
-            {search && !artistInfo ? (
+            {searched && artistInfo.length === 0 && (
                 <h1>No Artist Found. Try another search.</h1>
-            ) : artistInfo && artistInfo.length > 0 ? (
+            )}
+
+            {artistInfo.length > 0 && (
                 <section className='artist-info'>
                     {artistInfo.map((artist) => (
                         <div key={artist.id}>
@@ -124,7 +127,7 @@ function App() {
                         </div>
                     ))}
                 </section>
-            ) : null}
+            )}
 
             <RecentReviews />
         </main>

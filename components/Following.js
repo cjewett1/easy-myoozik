@@ -39,6 +39,7 @@ export default function Following({ artist, image, id }) {
     useEffect(() => {
         const loggedId = localStorage.getItem("userUid");
         const loggedArtistName = localStorage.getItem("name");
+        console.log(loggedArtistName);
         setLoggedInUserId(loggedId);
         setLoggedArtistName(loggedArtistName);
     }, []);

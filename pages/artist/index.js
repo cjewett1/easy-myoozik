@@ -16,7 +16,7 @@ import { toast } from "react-toastify";
 export default function ArtistInfo(props) {
     const router = useRouter();
     const { name, url, id, upcomingevents } = router.query;
-    const [artistName, setArtistName] = useState(null);
+    const [artistName, setArtistName] = useState("");
     const [artistId, setArtistID] = useState();
     const [artistImage, setArtistImage] = useState("");
     const [artistBio, setArtistBio] = useState("");
@@ -28,12 +28,15 @@ export default function ArtistInfo(props) {
     const artistApiKey = process.env.NEXT_PUBLIC_ARTIST_API_KEY;
 
     useEffect(() => {
-        setArtistName(name);
         setArtistID(id);
         setArtistImage(url);
         getArtistBio();
         setUpcomingConcerts(upcomingevents);
     }, []);
+
+    useEffect(() => {
+        console.log("artistName updated:", artistName);
+    }, [artistName]);
 
     useEffect(() => {
         localStorage.setItem("artistsId", artistId);
@@ -82,6 +85,14 @@ export default function ArtistInfo(props) {
     useEffect(() => {
         if (localStorage.hasOwnProperty("name")) {
             setArtistName(localStorage.getItem("name"));
+        }
+    }, []);
+
+    useEffect(() => {
+        if (name) {
+            console.log(`  yaaa ${name}`);
+            setArtistName(name);
+            console.log(artistName);
         }
     }, []);
 
